@@ -6,7 +6,7 @@
 
 /**
  *
- * @author Jacob Stevens
+ * @author Jacob Stevens and Scott Stewart Shriver
  */
 public class RunGame
 {

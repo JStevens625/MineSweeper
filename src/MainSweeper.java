@@ -1,4 +1,3 @@
-
 import javax.swing.JFrame;
 
 /*
@@ -9,7 +8,7 @@ import javax.swing.JFrame;
 
 /**
  *
- * @author Jacob Stevens
+ * @author Jacob Stevens and Scott Stewart Shriver
  */
 public class MainSweeper extends JFrame
 {
