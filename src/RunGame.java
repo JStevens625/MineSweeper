@@ -12,6 +12,6 @@ public class RunGame
 {
     public static void main(String[] args)
     {
-        MainSweeper MS = new MainSweeper();
+        MainGuiFrame MGF = new MainGuiFrame();
     }
 }
