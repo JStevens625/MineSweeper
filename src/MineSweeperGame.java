@@ -21,11 +21,11 @@ import static javax.swing.JFrame.EXIT_ON_CLOSE;
  *
  * @author Jacob Stevens
  */
-public class MainGuiFrame extends JFrame
+public class MineSweeperGame extends JFrame
 {
     Clip music;
     AudioInputStream ais;
-    public MainGuiFrame()
+    public MineSweeperGame()
     {
         //Full MainFrame
         setTitle("Substitution Cipher");

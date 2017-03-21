@@ -6,12 +6,9 @@
 
 /**
  *
- * @author Jacob Stevens and Scott Stewart Shriver
+ * @author Jacob Stevens
  */
-public class RunGame
+public class Bomb extends Tile
 {
-    public static void main(String[] args)
-    {
-        MineSweeperGame MGF = new MineSweeperGame();
-    }
+    
 }
