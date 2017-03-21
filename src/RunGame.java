@@ -12,6 +12,6 @@ public class RunGame
 {
     public static void main(String[] args)
     {
-        MineSweeperGame MGF = new MineSweeperGame();
+        
     }
 }
