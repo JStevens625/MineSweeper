@@ -1,3 +1,5 @@
+import javax.swing.JOptionPane;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -10,5 +12,7 @@
  */
 public class Empty extends Tile
 {
-    
+    public void selected() {
+        JOptionPane.showMessageDialog(null, "This tile was empty.");
+    }
 }
