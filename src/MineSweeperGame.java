@@ -1,6 +1,3 @@
-
-import java.awt.BorderLayout;
-import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Toolkit;
 import java.io.IOException;
@@ -51,7 +48,7 @@ public class MineSweeperGame extends JFrame
         
         //End of Colors
 
-        setVisible(true);
+        setVisible(false);
         setResizable(false);
     }
 }
