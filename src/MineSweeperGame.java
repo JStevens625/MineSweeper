@@ -25,14 +25,14 @@ public class MineSweeperGame extends JFrame
     public MineSweeperGame()
     {
         //Full MainFrame
-        setTitle("Substitution Cipher");
+        setTitle("SpaceBalls MineSweeper");
         setSize(700, 600);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
 
         //Aligns window to center of screen. Found it here: http://stackoverflow.com/questions/2442599/how-to-set-jframe-to-appear-centered-regardless-of-monitor-resolution
         Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
         this.setLocation(dim.width / 2 - this.getSize().width / 2, dim.height / 2 - this.getSize().height / 2);
-
+        
         //Adding all panels to frame
         
 
