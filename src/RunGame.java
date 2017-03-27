@@ -35,7 +35,7 @@ public class RunGame
         mode.setLocation(dim.width / 2 - mode.getSize().width / 2, dim.height / 2 - mode.getSize().height / 2);
         mode.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         
-        mode.setLayout(new GridLayout(4,1,0,0));
+        mode.setLayout(new GridLayout(3,1,0,0));
         JTextArea jt = new JTextArea("Minesweeper is a single-player game where you try to make it through a mine field with out hitting any bombs. If you hit a bomb you lose. If you hit a space without a bomb it will give you a number, the number symbolizes how many bombs are directly around it. To begin click on one of the difficulties below to start. Beginner will start with a 9X9 Board and have 10 bombs. Intermediate will have a 16X16 Board and have 40 bombs. And Advanced will have a 16X30 Board with 99 bombs.",20,20);
         JPanel jp = new JPanel(new GridLayout(1, 3));
         jt.setLineWrap(true);
