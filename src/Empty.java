@@ -1,18 +1,20 @@
-import javax.swing.JOptionPane;
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+import javax.swing.JOptionPane;
 
 /**
  *
- * @author Jacob Stevens
+ * @author Jacob Stevens and Scott Shriver
  */
-public class Empty extends Tile
-{
+public class Empty extends Tile {
+
+    private boolean isSelected = false;
+
     public void selected() {
+        isSelected = true;
         JOptionPane.showMessageDialog(null, "This tile was empty.");
     }
-}
+
+    public boolean getIsSelected() {
+        return isSelected;
+    }
+}//check if bombs around it, if empty needs to check until it finds bomb

@@ -1,3 +1,4 @@
+
 import java.awt.Dimension;
 import java.awt.Toolkit;
 import java.io.IOException;
@@ -9,21 +10,16 @@ import javax.sound.sampled.UnsupportedAudioFileException;
 import javax.swing.JFrame;
 import static javax.swing.JFrame.EXIT_ON_CLOSE;
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 /**
  *
- * @author Jacob Stevens
+ * @author Jacob Stevens and Scott Shriver
  */
-public class MineSweeperGame extends JFrame
-{
+public class MineSweeperGame extends JFrame {
+
     Clip music;
     AudioInputStream ais;
-    public MineSweeperGame()
-    {
+
+    public MineSweeperGame() {
         //Full MainFrame
         setTitle("SpaceBalls MineSweeper");
         setSize(700, 600);
@@ -32,22 +28,19 @@ public class MineSweeperGame extends JFrame
         //Aligns window to center of screen. Found it here: http://stackoverflow.com/questions/2442599/how-to-set-jframe-to-appear-centered-regardless-of-monitor-resolution
         Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
         this.setLocation(dim.width / 2 - this.getSize().width / 2, dim.height / 2 - this.getSize().height / 2);
-        
-        //Adding all panels to frame
-        
 
+        //Adding all panels to frame
         //Music
         try {
             music = AudioSystem.getClip();
             ais = AudioSystem.getAudioInputStream(getClass().getResource("Music/SpaceballsTheme.wav"));
             music.open(ais);
             music.loop(Clip.LOOP_CONTINUOUSLY);
-        } catch (IOException | UnsupportedAudioFileException | LineUnavailableException e) {}
+        } catch (IOException | UnsupportedAudioFileException | LineUnavailableException e) {
+        }
 
         // Beginning of Colors
-        
         //End of Colors
-
         setVisible(false);
         setResizable(false);
     }
