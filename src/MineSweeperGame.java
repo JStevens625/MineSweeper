@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 import java.awt.BorderLayout;
-=======
-
->>>>>>> a9dd08a4f9d221f2623c782fe816427d94593be5
 import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.GridLayout;
@@ -27,7 +23,7 @@ import javax.swing.JTextArea;
  *
  * @author Jacob Stevens and Scott Shriver
  */
-<<<<<<< HEAD
+
 public class MineSweeperGame
 {
     Clip music;
@@ -71,33 +67,15 @@ public class MineSweeperGame
         }
     };
     
-    public MineSweeperGame()
-    {
-=======
-public class MineSweeperGame extends JFrame {
 
-    Clip music;
-    AudioInputStream ais;
 
     public MineSweeperGame() {
-        //Full MainFrame
-        setTitle("SpaceBalls MineSweeper");
-        setSize(700, 600);
-        setDefaultCloseOperation(EXIT_ON_CLOSE);
-
-        //Aligns window to center of screen. Found it here: http://stackoverflow.com/questions/2442599/how-to-set-jframe-to-appear-centered-regardless-of-monitor-resolution
-        Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
-        this.setLocation(dim.width / 2 - this.getSize().width / 2, dim.height / 2 - this.getSize().height / 2);
-
-        //Adding all panels to frame
->>>>>>> a9dd08a4f9d221f2623c782fe816427d94593be5
         //Music
         try {
             music = AudioSystem.getClip();
             ais = AudioSystem.getAudioInputStream(getClass().getResource("Music/SpaceballsTheme.wav"));
             music.open(ais);
             music.loop(Clip.LOOP_CONTINUOUSLY);
-<<<<<<< HEAD
         } catch (IOException | UnsupportedAudioFileException | LineUnavailableException e) {}
         
         //Instructions Screen and mode chooser
@@ -143,20 +121,11 @@ public class MineSweeperGame extends JFrame {
         //Aligns window to center of screen. Found it here: http://stackoverflow.com/questions/2442599/how-to-set-jframe-to-appear-centered-regardless-of-monitor-resolution
         GameFrame.setLocation(dim.width / 2 - GameFrame.getSize().width / 2, dim.height / 2 - GameFrame.getSize().height / 2);
 
-=======
-        } catch (IOException | UnsupportedAudioFileException | LineUnavailableException e) {
-        }
->>>>>>> a9dd08a4f9d221f2623c782fe816427d94593be5
-
         // Beginning of Colors
         //End of Colors
-<<<<<<< HEAD
+
         
         GameFrame.setVisible(false);
         GameFrame.setResizable(false);
-=======
-        setVisible(false);
-        setResizable(false);
->>>>>>> a9dd08a4f9d221f2623c782fe816427d94593be5
     }
 }
