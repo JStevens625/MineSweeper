@@ -26,6 +26,8 @@ import javax.swing.JTextArea;
 
 public class MineSweeperGame
 {
+    JFrame mode = new JFrame();
+    JFrame GameFrame = new JFrame();
     Clip music;
     AudioInputStream ais;
     private static int Boardpick = 0;
@@ -46,6 +48,9 @@ public class MineSweeperGame
         {
             MineSweeperGame.setBoardpick(1);
             System.out.println(Boardpick);
+            mode.dispose();
+            GameFrame.setSize(600, 600);
+            GameFrame.setVisible(true);
         }
     };
     
@@ -55,6 +60,9 @@ public class MineSweeperGame
         {
             MineSweeperGame.setBoardpick(2);
             System.out.println(Boardpick);
+            mode.dispose();
+            GameFrame.setSize(900, 900);
+            GameFrame.setVisible(true);
         }
     };
     
@@ -64,6 +72,9 @@ public class MineSweeperGame
         {
             MineSweeperGame.setBoardpick(3);
             System.out.println(Boardpick);
+            mode.dispose();
+            GameFrame.setSize(1200, 900);
+            GameFrame.setVisible(true);
         }
     };
     
@@ -79,7 +90,7 @@ public class MineSweeperGame
         } catch (IOException | UnsupportedAudioFileException | LineUnavailableException e) {}
         
         //Instructions Screen and mode chooser
-        JFrame mode = new JFrame();
+        
         mode.setSize(600, 600);
         Font myfont = new Font("Serif", 0, 20);
         Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
@@ -113,19 +124,13 @@ public class MineSweeperGame
         
         
         //Game MainFrame
-        JFrame GameFrame = new JFrame();
+        
         GameFrame.setTitle("SpaceBalls MineSweeper");
-        GameFrame.setSize(700, 600);
         GameFrame.setDefaultCloseOperation(EXIT_ON_CLOSE);
 
         //Aligns window to center of screen. Found it here: http://stackoverflow.com/questions/2442599/how-to-set-jframe-to-appear-centered-regardless-of-monitor-resolution
-        GameFrame.setLocation(dim.width / 2 - GameFrame.getSize().width / 2, dim.height / 2 - GameFrame.getSize().height / 2);
-
-        // Beginning of Colors
-        //End of Colors
-
+        //GameFrame.setLocation(dim.width / 2 - GameFrame.getSize().width / 2, dim.height / 2 - GameFrame.getSize().height / 2);
         
-        GameFrame.setVisible(false);
         GameFrame.setResizable(false);
     }
 }
