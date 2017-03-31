@@ -1,18 +1,12 @@
 
 import javax.swing.JOptionPane;
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 /**
  *
- * @author Jacob Stevens
+ * @author Jacob Stevens and Scott Shriver
  */
-public class Bomb extends Tile
-{
+public class Bomb extends Tile {
+
     public void selected() {
         JOptionPane.showMessageDialog(null, "This tile was a bomb.");
     }
