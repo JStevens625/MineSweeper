@@ -31,6 +31,7 @@ public class MineSweeperGame
     Clip music;
     AudioInputStream ais;
     private static int Boardpick = 0;
+    Tile[][] gameGrid;
 
     public static void setBoardpick(int Boardpick)
     {
@@ -50,6 +51,8 @@ public class MineSweeperGame
             System.out.println(Boardpick);
             mode.dispose();
             GameFrame.setSize(600, 600);
+            gameGrid = new Tile[9][9];
+            gameGrid = addTiles(gameGrid, 0);
             GameFrame.setVisible(true);
         }
     };
@@ -62,6 +65,8 @@ public class MineSweeperGame
             System.out.println(Boardpick);
             mode.dispose();
             GameFrame.setSize(900, 900);
+            gameGrid = new Tile[16][16];
+            gameGrid = addTiles(gameGrid, 1);
             GameFrame.setVisible(true);
         }
     };
@@ -74,6 +79,8 @@ public class MineSweeperGame
             System.out.println(Boardpick);
             mode.dispose();
             GameFrame.setSize(1200, 900);
+            gameGrid = new Tile[16][30];
+            gameGrid = addTiles(gameGrid, 2);
             GameFrame.setVisible(true);
         }
     };
@@ -133,4 +140,20 @@ public class MineSweeperGame
         
         GameFrame.setResizable(false);
     }
+    
+    private Tile[][] addTiles(Tile[][] inputGrid, int difficulty) {
+        int bombQuantity = 0;
+        switch(difficulty) {
+            case 0:
+                bombQuantity = 10;
+                break;
+            case 1:
+                bombQuantity = 40;
+                break;
+            case 2:
+                bombQuantity = 99;
+                break;
+        }
+        return inputGrid;
+    } 
 }
