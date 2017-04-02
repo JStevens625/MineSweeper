@@ -32,6 +32,8 @@ public class MineSweeperGame
     AudioInputStream ais;
     private static int Boardpick = 0;
     Tile[][] gameGrid;
+    Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
+
 
     public static void setBoardpick(int Boardpick)
     {
@@ -53,6 +55,7 @@ public class MineSweeperGame
             GameFrame.setSize(600, 600);
             gameGrid = new Tile[9][9];
             gameGrid = addTiles(gameGrid, 0);
+            GameFrame.setLocation(dim.width / 2 - GameFrame.getSize().width / 2, dim.height / 2 - GameFrame.getSize().height / 2);
             GameFrame.setVisible(true);
         }
     };
@@ -64,9 +67,10 @@ public class MineSweeperGame
             MineSweeperGame.setBoardpick(2);
             System.out.println(Boardpick);
             mode.dispose();
-            GameFrame.setSize(900, 900);
+            GameFrame.setSize(600, 600);
             gameGrid = new Tile[16][16];
             gameGrid = addTiles(gameGrid, 1);
+            GameFrame.setLocation(dim.width / 2 - GameFrame.getSize().width / 2, dim.height / 2 - GameFrame.getSize().height / 2);
             GameFrame.setVisible(true);
         }
     };
@@ -78,9 +82,10 @@ public class MineSweeperGame
             MineSweeperGame.setBoardpick(3);
             System.out.println(Boardpick);
             mode.dispose();
-            GameFrame.setSize(1200, 900);
+            GameFrame.setSize(600, 600);
             gameGrid = new Tile[16][30];
             gameGrid = addTiles(gameGrid, 2);
+            GameFrame.setLocation(dim.width / 2 - GameFrame.getSize().width / 2, dim.height / 2 - GameFrame.getSize().height / 2);
             GameFrame.setVisible(true);
         }
     };
@@ -100,7 +105,6 @@ public class MineSweeperGame
         
         mode.setSize(600, 600);
         Font myfont = new Font("Serif", 0, 20);
-        Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
         mode.setLocation(dim.width / 2 - mode.getSize().width / 2, dim.height / 2 - mode.getSize().height / 2);
         mode.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         mode.setLayout(new GridLayout(3,1,0,0));
@@ -136,7 +140,7 @@ public class MineSweeperGame
         GameFrame.setDefaultCloseOperation(EXIT_ON_CLOSE);
 
         //Aligns window to center of screen. Found it here: http://stackoverflow.com/questions/2442599/how-to-set-jframe-to-appear-centered-regardless-of-monitor-resolution
-        //GameFrame.setLocation(dim.width / 2 - GameFrame.getSize().width / 2, dim.height / 2 - GameFrame.getSize().height / 2);
+        
         
         GameFrame.setResizable(false);
     }
