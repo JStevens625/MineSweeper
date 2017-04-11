@@ -6,6 +6,7 @@ import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.IOException;
+import java.security.SecureRandom;
 import javax.sound.sampled.AudioInputStream;
 import javax.sound.sampled.AudioSystem;
 import javax.sound.sampled.Clip;
@@ -28,6 +29,7 @@ public class MineSweeperGame
 {
     JFrame mode = new JFrame();
     JFrame GameFrame = new JFrame();
+    SecureRandom rand = new SecureRandom();
     Clip music;
     AudioInputStream ais;
     private static int Boardpick = 0;
@@ -44,7 +46,7 @@ public class MineSweeperGame
     {
         return Boardpick;
     }
-    
+
     private ActionListener easygame = new ActionListener()
     {
         public void actionPerformed(ActionEvent e)
@@ -59,7 +61,7 @@ public class MineSweeperGame
             GameFrame.setVisible(true);
         }
     };
-    
+
     private ActionListener mediumgame = new ActionListener()
     {
         public void actionPerformed(ActionEvent e)
@@ -74,7 +76,7 @@ public class MineSweeperGame
             GameFrame.setVisible(true);
         }
     };
-    
+
     private ActionListener hardgame = new ActionListener()
     {
         public void actionPerformed(ActionEvent e)
@@ -89,7 +91,7 @@ public class MineSweeperGame
             GameFrame.setVisible(true);
         }
     };
-    
+
 
 
     public MineSweeperGame() {
@@ -100,7 +102,7 @@ public class MineSweeperGame
             music.open(ais);
             music.loop(Clip.LOOP_CONTINUOUSLY);
         } catch (IOException | UnsupportedAudioFileException | LineUnavailableException e) {}
-        
+
         //Instructions Screen and mode chooser
         
         mode.setSize(600, 600);
@@ -129,22 +131,22 @@ public class MineSweeperGame
         mode.add(new JLabel(new ImageIcon("src/Pictures/Intro.jpg")), BorderLayout.NORTH);
         mode.add(jt, BorderLayout.CENTER);
         mode.add(jp, BorderLayout.SOUTH);
-        mode.setVisible(true); 
+        mode.setVisible(true);
         //end of instructions screen and mode chooser
-        
-        
-        
+
+
+
         //Game MainFrame
-        
+
         GameFrame.setTitle("SpaceBalls MineSweeper");
         GameFrame.setDefaultCloseOperation(EXIT_ON_CLOSE);
 
         //Aligns window to center of screen. Found it here: http://stackoverflow.com/questions/2442599/how-to-set-jframe-to-appear-centered-regardless-of-monitor-resolution
-        
-        
+
+
         GameFrame.setResizable(false);
     }
-    
+
     private Tile[][] addTiles(Tile[][] inputGrid, int difficulty) {
         int bombQuantity = 0;
         switch(difficulty) {
@@ -159,5 +161,5 @@ public class MineSweeperGame
                 break;
         }
         return inputGrid;
-    } 
+    }
 }
