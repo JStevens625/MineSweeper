@@ -27,38 +27,19 @@ import javax.swing.JTextArea;
 
 public class MineSweeperGame
 {
+    Board board = new Board();
     JFrame mode = new JFrame();
-    JFrame GameFrame = new JFrame();
     SecureRandom rand = new SecureRandom();
     Clip music;
     AudioInputStream ais;
-    private static int Boardpick = 0;
-    Tile[][] gameGrid;
     Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
-
-
-    public static void setBoardpick(int Boardpick)
-    {
-        MineSweeperGame.Boardpick = Boardpick;
-    }
-
-    public int getBoardpick()
-    {
-        return Boardpick;
-    }
 
     private ActionListener easygame = new ActionListener()
     {
         public void actionPerformed(ActionEvent e)
         {
-            MineSweeperGame.setBoardpick(1);
-            System.out.println(Boardpick);
             mode.dispose();
-            GameFrame.setSize(600, 600);
-            gameGrid = new Tile[9][9];
-            gameGrid = addTiles(gameGrid, 0);
-            GameFrame.setLocation(dim.width / 2 - GameFrame.getSize().width / 2, dim.height / 2 - GameFrame.getSize().height / 2);
-            GameFrame.setVisible(true);
+            board.easygame();
         }
     };
 
@@ -66,14 +47,8 @@ public class MineSweeperGame
     {
         public void actionPerformed(ActionEvent e)
         {
-            MineSweeperGame.setBoardpick(2);
-            System.out.println(Boardpick);
             mode.dispose();
-            GameFrame.setSize(600, 600);
-            gameGrid = new Tile[16][16];
-            gameGrid = addTiles(gameGrid, 1);
-            GameFrame.setLocation(dim.width / 2 - GameFrame.getSize().width / 2, dim.height / 2 - GameFrame.getSize().height / 2);
-            GameFrame.setVisible(true);
+            board.mediumgame();
         }
     };
 
@@ -81,14 +56,8 @@ public class MineSweeperGame
     {
         public void actionPerformed(ActionEvent e)
         {
-            MineSweeperGame.setBoardpick(3);
-            System.out.println(Boardpick);
             mode.dispose();
-            GameFrame.setSize(600, 600);
-            gameGrid = new Tile[16][30];
-            gameGrid = addTiles(gameGrid, 2);
-            GameFrame.setLocation(dim.width / 2 - GameFrame.getSize().width / 2, dim.height / 2 - GameFrame.getSize().height / 2);
-            GameFrame.setVisible(true);
+            board.hardgame();
         }
     };
 
@@ -104,7 +73,6 @@ public class MineSweeperGame
         } catch (IOException | UnsupportedAudioFileException | LineUnavailableException e) {}
 
         //Instructions Screen and mode chooser
-        
         mode.setSize(600, 600);
         Font myfont = new Font("Serif", 0, 20);
         mode.setLocation(dim.width / 2 - mode.getSize().width / 2, dim.height / 2 - mode.getSize().height / 2);
@@ -132,34 +100,5 @@ public class MineSweeperGame
         mode.add(jt, BorderLayout.CENTER);
         mode.add(jp, BorderLayout.SOUTH);
         mode.setVisible(true);
-        //end of instructions screen and mode chooser
-
-
-
-        //Game MainFrame
-
-        GameFrame.setTitle("SpaceBalls MineSweeper");
-        GameFrame.setDefaultCloseOperation(EXIT_ON_CLOSE);
-
-        //Aligns window to center of screen. Found it here: http://stackoverflow.com/questions/2442599/how-to-set-jframe-to-appear-centered-regardless-of-monitor-resolution
-
-
-        GameFrame.setResizable(false);
-    }
-
-    private Tile[][] addTiles(Tile[][] inputGrid, int difficulty) {
-        int bombQuantity = 0;
-        switch(difficulty) {
-            case 0:
-                bombQuantity = 10;
-                break;
-            case 1:
-                bombQuantity = 40;
-                break;
-            case 2:
-                bombQuantity = 99;
-                break;
-        }
-        return inputGrid;
     }
 }
