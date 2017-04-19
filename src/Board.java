@@ -12,7 +12,7 @@ import javax.swing.JPanel;
  *
  * @author Jacob Stevens and Scott Shriver
  */
-public class Board
+public class Board 
 {
 
     JFrame GameFrame = new JFrame();
@@ -21,6 +21,10 @@ public class Board
     JButton easybuttons[][] = new JButton[9][9];
     JButton mediumbuttons[][] = new JButton[16][16];
     JButton hardbuttons[][] = new JButton[30][16];
+    Tile easytile[][];
+    Tile mediumtile[][];
+    Tile hardtile[][];
+    
 
     private ActionListener easyButtonClick = new ActionListener()
     {
