@@ -11,6 +11,6 @@ public abstract class Tile extends JButton implements ActionListener{
     boolean hasBeenClicked = false;
 
     public abstract void selected();
-    public abstract void checkNeighbor();
+    public abstract void checkNeighbor(Tile[][] myTiles);
     public abstract String showMe();
 }

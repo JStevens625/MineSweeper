@@ -1,4 +1,5 @@
 
+import java.awt.event.ActionEvent;
 import javax.swing.JOptionPane;
 
 /**
@@ -11,11 +12,13 @@ public class Empty extends Tile {
     private String whatAmI = "Empty";
     private int numOfBombs = 0;
 
+    @Override
     public void selected() {
         isSelected = true;
         JOptionPane.showMessageDialog(null, "This tile was empty.");
     }
 
+    @Override
     public String showMe() {
         return whatAmI;
     }
@@ -24,6 +27,7 @@ public class Empty extends Tile {
         return isSelected;
     }
 
+    @Override
     public void checkNeighbor(Tile[][] myTiles) {
         //use ints x and y from tile class
         int xMax = 0;
@@ -39,6 +43,8 @@ public class Empty extends Tile {
         if (y != yMax) {
             if (myTiles[x][y + 1].showMe().equals("Bomb")) {
                 numOfBombs += 1;
+            } else if(numOfBombs == 0) {
+                //I HAVE NO IDEA WHAT TO DO ANYMORE WHY IS MY LIFE SO PATHETIC I'LL NEVER GET WHERE I WANNA BE IN THE FUTURE
             }
         }
         if (y != 0) {
@@ -76,6 +82,11 @@ public class Empty extends Tile {
                 numOfBombs += 1;
             }
         }
+    }
+
+    @Override
+    public void actionPerformed(ActionEvent ae) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }//check if bombs around it, if empty needs to check until it finds bomb
 /*checkNeighbor method
