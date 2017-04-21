@@ -13,7 +13,7 @@ public abstract class Tile extends JButton implements ActionListener {
 
     public abstract void selected();
 
-    public abstract void checkNeighbor(Tile[][] myTiles);
+    public abstract void checkNeighbor(Tile[][] myTiles, int inputX, int inputY);
 
     public abstract String showMe();
 

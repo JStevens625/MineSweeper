@@ -34,8 +34,10 @@ public class Empty extends Tile {
     }
 
     @Override
-    public void checkNeighbor(Tile[][] myTiles) {
+    public void checkNeighbor(Tile[][] myTiles, int inputX, int inputY) {
         //use ints x and y from tile class
+        x = inputX;
+        y = inputY;
         int xMax = myTiles.length;
         int yMax = myTiles[0].length;
         xMax -= 1;
@@ -44,42 +46,56 @@ public class Empty extends Tile {
             if (myTiles[x][y + 1].showMe().equals("Bomb")) {
                 numOfBombs += 1;
             } else if (numOfBombs == 0) {
-                //I HAVE NO IDEA WHAT TO DO ANYMORE WHY IS MY LIFE SO PATHETIC I'LL NEVER GET WHERE I WANNA BE IN THE FUTURE
+                checkNeighbor(myTiles, x, y + 1);
             }
         }
         if (y != 0) {
             if (myTiles[x][y - 1].showMe().equals("Bomb")) {
                 numOfBombs += 1;
+            } else {
+                checkNeighbor(myTiles, x, y - 1);
             }
         }
         if (x != xMax) {
             if (myTiles[x + 1][y].showMe().equals("Bomb")) {
                 numOfBombs += 1;
+            } else {
+                checkNeighbor(myTiles, x + 1, y);
             }
         }
         if (x != 0) { //out of bounds check
             if (myTiles[x - 1][y].showMe().equals("Bomb")) {
                 numOfBombs += 1;
+            } else {
+                checkNeighbor(myTiles, x - 1, y);
             }
         }
         if (x != xMax && y != yMax) {
             if (myTiles[x + 1][y + 1].showMe().equals("Bomb")) {
                 numOfBombs += 1;
+            } else {
+                checkNeighbor(myTiles, x + 1, y + 1);
             }
         }
         if (x != xMax && y != 0) {
             if (myTiles[x + 1][y - 1].showMe().equals("Bomb")) {
                 numOfBombs += 1;
+            } else {
+                checkNeighbor(myTiles, x + 1, y - 1);
             }
         }
         if (x != 0 && y != yMax) { //out of bounds check
             if (myTiles[x - 1][y + 1].showMe().equals("Bomb")) {
                 numOfBombs += 1;
+            } else {
+                checkNeighbor(myTiles, x - 1, y + 1);
             }
         }
         if (x != 0 && y != 0) { //out of bounds check
             if (myTiles[x - 1][y - 1].showMe().equals("Bomb")) {
                 numOfBombs += 1;
+            } else {
+                checkNeighbor(myTiles, x - 1, y - 1);
             }
         }
     }

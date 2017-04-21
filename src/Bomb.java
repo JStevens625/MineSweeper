@@ -17,7 +17,7 @@ public class Bomb extends Tile {
     }
 
     @Override
-    public void checkNeighbor(Tile[][] myTiles) {
+    public void checkNeighbor(Tile[][] myTiles, int inputX, int inputY) {
         //not necessary for Bomb class
     }
 
