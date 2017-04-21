@@ -28,22 +28,22 @@ public class Empty extends Tile {
     }
 
     @Override
+    public void setXAndY(int inputX, int inputY) {
+        x = inputX;
+        y = inputY;
+    }
+
+    @Override
     public void checkNeighbor(Tile[][] myTiles) {
         //use ints x and y from tile class
-        int xMax = 0;
-        int yMax = 0;
-        for (int i = 0; i < myTiles.length; i++) {
-            xMax += 1;
-            for (int j = 0; j < myTiles.length; j++) {
-                yMax += 1;
-            }
-        }
+        int xMax = myTiles.length;
+        int yMax = myTiles[0].length;
         xMax -= 1;
         yMax -= 1;
         if (y != yMax) {
             if (myTiles[x][y + 1].showMe().equals("Bomb")) {
                 numOfBombs += 1;
-            } else if(numOfBombs == 0) {
+            } else if (numOfBombs == 0) {
                 //I HAVE NO IDEA WHAT TO DO ANYMORE WHY IS MY LIFE SO PATHETIC I'LL NEVER GET WHERE I WANNA BE IN THE FUTURE
             }
         }
