@@ -18,57 +18,8 @@ public class Board
     JFrame GameFrame = new JFrame();
     JPanel buttonboard = new JPanel();
     Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
-    JButton easybuttons[][] = new JButton[9][9];
-    JButton mediumbuttons[][] = new JButton[16][16];
-    JButton hardbuttons[][] = new JButton[30][16];
     Tile tile;
 
-
-
-    private ActionListener easyButtonClick = new ActionListener()
-    {
-        public void actionPerformed(ActionEvent e)
-        {
-            for (int i = 0; i < easybuttons.length; i++) {
-                for (int j = 0; j < easybuttons.length; j++) {
-                    if (e.getSource() == easybuttons[i][j]) {
-                        easybuttons[i][j].setEnabled(false);
-                    }
-
-                }
-            };
-        }
-    };
-
-    private ActionListener mediumButtonClick = new ActionListener()
-    {
-        public void actionPerformed(ActionEvent e)
-        {
-            for (int i = 0; i < mediumbuttons.length; i++) {
-                for (int j = 0; j < mediumbuttons.length; j++) {
-                    if (e.getSource() == mediumbuttons[i][j]) {
-                        mediumbuttons[i][j].setEnabled(false);
-                    }
-
-                }
-            };
-        }
-    };
-
-    private ActionListener hardButtonClick = new ActionListener()
-    {
-        public void actionPerformed(ActionEvent e)
-        {
-            for (int i = 0; i < hardbuttons.length; i++) {
-                for (int j = 0; j < hardbuttons.length; j++) {
-                    if (e.getSource() == hardbuttons[i][j]) {
-                        hardbuttons[i][j].setEnabled(false);
-                    }
-
-                }
-            };
-        }
-    };
 
     public void easygame()
     {
@@ -76,13 +27,7 @@ public class Board
         GameFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         GameFrame.setResizable(false);
         buttonboard.setLayout(new GridLayout(9, 9));
-        for (int i = 0; i < 9; i++) {
-            for (int k = 0; k < 9; k++) {
-                    
-                easybuttons[i][k].addActionListener(easyButtonClick);
-                buttonboard.add(easybuttons[i][k]);
-            }
-        }
+        tile.easygame(buttonboard);
         GameFrame.add(buttonboard);
         GameFrame.setSize(600, 600);
         GameFrame.setLocation(dim.width / 2 - GameFrame.getSize().width / 2, dim.height / 2 - GameFrame.getSize().height / 2);
@@ -95,13 +40,7 @@ public class Board
         GameFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         GameFrame.setResizable(false);
         buttonboard.setLayout(new GridLayout(16, 16));
-        for (int i = 0; i < 16; i++) {
-            for (int k = 0; k < 16; k++) {
-                mediumbuttons[i][k] = new JButton();
-                mediumbuttons[i][k].addActionListener(mediumButtonClick);
-                buttonboard.add(mediumbuttons[i][k]);
-            }
-        }
+        tile.mediumgame(buttonboard);
         GameFrame.add(buttonboard);
         GameFrame.setSize(600, 600);
         GameFrame.setLocation(dim.width / 2 - GameFrame.getSize().width / 2, dim.height / 2 - GameFrame.getSize().height / 2);
@@ -114,13 +53,7 @@ public class Board
         GameFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         GameFrame.setResizable(false);
         buttonboard.setLayout(new GridLayout(16, 30));
-        for (int i = 0; i < 30; i++) {
-            for (int k = 0; k < 16; k++) {
-                hardbuttons[i][k] = new JButton();
-                hardbuttons[i][k].addActionListener(hardButtonClick);
-                buttonboard.add(hardbuttons[i][k]);
-            }
-        }
+        tile.hardgame(buttonboard);
         GameFrame.add(buttonboard);
         GameFrame.setSize(600, 600);
         GameFrame.setLocation(dim.width / 2 - GameFrame.getSize().width / 2, dim.height / 2 - GameFrame.getSize().height / 2);
