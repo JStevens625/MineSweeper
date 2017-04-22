@@ -104,4 +104,4 @@ public class Empty extends Tile {
     public void actionPerformed(ActionEvent ae) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-}//check if bombs around it, if empty needs to check until it finds bomb
+}
