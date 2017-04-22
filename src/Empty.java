@@ -52,49 +52,49 @@ public class Empty extends Tile {
         if (y != 0) {
             if (myTiles[x][y - 1].showMe().equals("Bomb")) {
                 numOfBombs += 1;
-            } else {
+            } else if (numOfBombs == 0) {
                 checkNeighbor(myTiles, x, y - 1);
             }
         }
         if (x != xMax) {
             if (myTiles[x + 1][y].showMe().equals("Bomb")) {
                 numOfBombs += 1;
-            } else {
+            } else if (numOfBombs == 0) {
                 checkNeighbor(myTiles, x + 1, y);
             }
         }
         if (x != 0) { //out of bounds check
             if (myTiles[x - 1][y].showMe().equals("Bomb")) {
                 numOfBombs += 1;
-            } else {
+            } else if (numOfBombs == 0) {
                 checkNeighbor(myTiles, x - 1, y);
             }
         }
         if (x != xMax && y != yMax) {
             if (myTiles[x + 1][y + 1].showMe().equals("Bomb")) {
                 numOfBombs += 1;
-            } else {
+            } else if (numOfBombs == 0) {
                 checkNeighbor(myTiles, x + 1, y + 1);
             }
         }
         if (x != xMax && y != 0) {
             if (myTiles[x + 1][y - 1].showMe().equals("Bomb")) {
                 numOfBombs += 1;
-            } else {
+            } else if (numOfBombs == 0) {
                 checkNeighbor(myTiles, x + 1, y - 1);
             }
         }
         if (x != 0 && y != yMax) { //out of bounds check
             if (myTiles[x - 1][y + 1].showMe().equals("Bomb")) {
                 numOfBombs += 1;
-            } else {
+            } else if (numOfBombs == 0) {
                 checkNeighbor(myTiles, x - 1, y + 1);
             }
         }
         if (x != 0 && y != 0) { //out of bounds check
             if (myTiles[x - 1][y - 1].showMe().equals("Bomb")) {
                 numOfBombs += 1;
-            } else {
+            } else if (numOfBombs == 0) {
                 checkNeighbor(myTiles, x - 1, y - 1);
             }
         }
