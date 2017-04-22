@@ -15,7 +15,6 @@ import javax.sound.sampled.UnsupportedAudioFileException;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
-import static javax.swing.JFrame.EXIT_ON_CLOSE;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextArea;
@@ -34,10 +33,22 @@ public class MineSweeperGame
     AudioInputStream ais;
     Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
 
+    private int difficultsetter;
+    public int getDifficultsetter()
+    {
+        return difficultsetter;
+    }
+    public void setDifficultsetter(int difficultsetter)
+    {
+        this.difficultsetter = difficultsetter;
+    }
+
+
     private ActionListener easygame = new ActionListener()
     {
         public void actionPerformed(ActionEvent e)
         {
+            setDifficultsetter(1);
             mode.dispose();
             board.easygame();
         }
@@ -47,6 +58,7 @@ public class MineSweeperGame
     {
         public void actionPerformed(ActionEvent e)
         {
+            setDifficultsetter(2);
             mode.dispose();
             board.mediumgame();
         }
@@ -56,6 +68,7 @@ public class MineSweeperGame
     {
         public void actionPerformed(ActionEvent e)
         {
+            setDifficultsetter(3);
             mode.dispose();
             board.hardgame();
         }
@@ -100,5 +113,6 @@ public class MineSweeperGame
         mode.add(jt, BorderLayout.CENTER);
         mode.add(jp, BorderLayout.SOUTH);
         mode.setVisible(true);
+        
     }
 }

@@ -12,7 +12,7 @@ import javax.swing.JPanel;
  *
  * @author Jacob Stevens and Scott Shriver
  */
-public class Board 
+public class Board
 {
 
     JFrame GameFrame = new JFrame();
@@ -21,26 +21,25 @@ public class Board
     JButton easybuttons[][] = new JButton[9][9];
     JButton mediumbuttons[][] = new JButton[16][16];
     JButton hardbuttons[][] = new JButton[30][16];
-    Tile easytile[][];
-    Tile mediumtile[][];
-    Tile hardtile[][];
-    
+    Tile tile;
+
+
 
     private ActionListener easyButtonClick = new ActionListener()
     {
         public void actionPerformed(ActionEvent e)
         {
-            for (int i = 0; i < easytile.length; i++) {
-                for (int j = 0; j < easytile.length; j++) {
-                    if (e.getSource() == easytile[i][j]) {
-                        easytile[i][j].setEnabled(false);
+            for (int i = 0; i < easybuttons.length; i++) {
+                for (int j = 0; j < easybuttons.length; j++) {
+                    if (e.getSource() == easybuttons[i][j]) {
+                        easybuttons[i][j].setEnabled(false);
                     }
 
                 }
             };
         }
     };
-    
+
     private ActionListener mediumButtonClick = new ActionListener()
     {
         public void actionPerformed(ActionEvent e)
@@ -55,7 +54,7 @@ public class Board
             };
         }
     };
-    
+
     private ActionListener hardButtonClick = new ActionListener()
     {
         public void actionPerformed(ActionEvent e)
@@ -79,39 +78,9 @@ public class Board
         buttonboard.setLayout(new GridLayout(9, 9));
         for (int i = 0; i < 9; i++) {
             for (int k = 0; k < 9; k++) {
-                easytile[i][k] = new Tile() {
-                    @Override
-                    public void selected()
-                    {
-                        throw new UnsupportedOperationException("Not supported yet."); 
-                    }
-
-                    @Override
-                    public void checkNeighbor(Tile[][] myTiles)
-                    {
-                        throw new UnsupportedOperationException("Not supported yet."); 
-                    }
-
-                    @Override
-                    public String showMe()
-                    {
-                        throw new UnsupportedOperationException("Not supported yet."); 
-                    }
-
-                    @Override
-                    public void setXAndY(int inputX, int inputY)
-                    {
-                        throw new UnsupportedOperationException("Not supported yet."); 
-                    }
-
-                    @Override
-                    public void actionPerformed(ActionEvent ae)
-                    {
-                        throw new UnsupportedOperationException("Not supported yet."); 
-                    }
-                };
-                easytile[i][k].addActionListener(easyButtonClick);
-                buttonboard.add(easytile[i][k]);
+                    
+                easybuttons[i][k].addActionListener(easyButtonClick);
+                buttonboard.add(easybuttons[i][k]);
             }
         }
         GameFrame.add(buttonboard);
